@@ -7,7 +7,8 @@ import lombok.RequiredArgsConstructor;
 @Getter
 public enum ButtonNameEnum {
     BAR ("Бар"),
-    KITCHEN ("Кухня");
+    KITCHEN ("Кухня"),
+    HELP("Допомога");
 
     private final String name;
 

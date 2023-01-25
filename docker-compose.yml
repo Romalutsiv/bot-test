@@ -1,0 +1,25 @@
+version: '3.1'
+
+services:
+  app:
+    build:
+      context: .
+    container_name: bot-test
+    restart: always
+    depends_on:
+      - db-bot
+    environment:
+      BOT_NAME: GoyraMenubot
+      BOT_TOKEN: 5238207911:AAGNe7SAptlVfWvZeD2dxd_W74LCJ-sXogI
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db-bot:5432/goyra_bot
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+  db-bot:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+    ports:
+      - '5430:5432'

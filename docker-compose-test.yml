@@ -1,0 +1,12 @@
+version: '3.1'
+
+services:
+  db-bot:
+    image: postgres:latest
+    restart: always
+    container_name: db-bot
+    ports:
+      - "5430:5432"
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
